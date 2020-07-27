@@ -5,16 +5,13 @@ export interface AuthState {
   isPending: boolean;
   error: string;
   user: firebase.User | null;
-  credential: firebase.auth.AuthCredential | null;
 }
 
+export type ExistingAuthRequest = EmptyAction;
 export type LoginRequest = EmptyAction;
 export type LoginPending = ActionWithPayload<{ isPending: boolean }>;
 export type LoginError = ActionWithPayload<{ error: string }>;
-export type LoginSuccess = ActionWithPayload<{
-  user: firebase.User;
-  credential: firebase.auth.AuthCredential;
-}>;
+export type LoginSuccess = ActionWithPayload<{ user: firebase.User }>;
 
 export type LogoutRequest = EmptyAction;
 

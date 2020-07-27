@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { actions as authActions } from 'store/auth';
 import { useActions } from 'store/utils';
 
 const LoginScreen: React.FC = () => {
-  const [loginWithGoogle] = useActions([authActions.loginAsync]);
+  const [checkForExistingAuth, loginWithGoogle] = useActions([
+    authActions.checkForExistingAuth,
+    authActions.loginAsync
+  ]);
 
-  const onButtonPress = () => {
-    loginWithGoogle();
-  };
+  useEffect(() => {
+    checkForExistingAuth();
+  }, []);
 
   return (
     <View style={styles.container}>
       <Text>Plz</Text>
-      <TouchableOpacity onPress={onButtonPress}>
+      <TouchableOpacity onPress={() => loginWithGoogle()}>
         <Text>LOGIN</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

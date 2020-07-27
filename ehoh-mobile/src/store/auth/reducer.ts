@@ -9,25 +9,28 @@ import {
   AuthActionTypes,
   LoginRequest,
   LogoutRequest,
-  LoginError
+  LoginError,
+  ExistingAuthRequest
 } from './types';
 
 export const KEY = 'auth';
 
 export const actionTypes = {
+  CHECK_FOR_EXISTING_AUTH: `${KEY}/CHECK_FOR_EXISTING_AUTH`,
   LOGIN: createAsyncTypes(`${KEY}/LOGIN`),
   LOGOUT: `${KEY}/LOGOUT`
 };
 
 export const actions = {
+  checkForExistingAuth: (): ExistingAuthRequest => ({ type: actionTypes.CHECK_FOR_EXISTING_AUTH }),
   loginAsync: (): LoginRequest => ({ type: actionTypes.LOGIN.REQUEST }),
   loginLoading: (isPending: boolean): LoginPending => ({
     type: actionTypes.LOGIN.PENDING,
     payload: { isPending }
   }),
-  loginSuccess: (user: firebase.User, credential: firebase.auth.AuthCredential): LoginSuccess => ({
+  loginSuccess: (user: firebase.User): LoginSuccess => ({
     type: actionTypes.LOGIN.SUCCESS,
-    payload: { user, credential }
+    payload: { user }
   }),
   loginError: (error: string): LoginError => ({
     type: actionTypes.LOGIN.ERROR,
@@ -39,8 +42,7 @@ export const actions = {
 export const initialState: AuthState = {
   isPending: false,
   error: '',
-  user: null,
-  credential: null
+  user: null
 };
 
 const handlers: Handlers<AuthState, AuthActionTypes> = {
@@ -50,8 +52,7 @@ const handlers: Handlers<AuthState, AuthActionTypes> = {
   }),
   [actionTypes.LOGIN.SUCCESS]: (state, action) => ({
     ...state,
-    user: (action as LoginSuccess).payload.user,
-    credential: (action as LoginSuccess).payload.credential
+    user: (action as LoginSuccess).payload.user
   }),
   [actionTypes.LOGIN.ERROR]: (state, action) => ({
     ...state,
