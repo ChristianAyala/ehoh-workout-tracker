@@ -17,7 +17,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.christianayala.ehoh",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.938239100001-4sbo9vuvs5jko990vali6trbpgs93d0r"
+        }
+      },
+      "googleServicesFile": "./src/config/google/GoogleService-Info.plist"
     },
     "web": {
       "favicon": "./assets/favicon.png"
