@@ -1,6 +1,6 @@
 import firebase from 'services/firebase';
-import { Handlers } from 'store/types';
 import { createAsyncTypes, createReducers } from 'store/utils';
+import { Handlers } from 'types/redux';
 
 import {
   AuthState,

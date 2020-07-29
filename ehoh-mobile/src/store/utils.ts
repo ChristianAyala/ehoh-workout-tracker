@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Handler, GenericAction, Handlers } from './types';
+import { Handler, GenericAction, Handlers } from 'types/redux';
 
 const asyncRequestStates = {
   REQUEST: 'REQUEST',

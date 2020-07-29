@@ -21,7 +21,7 @@ const onSuccessfulLogin = async (user: Google.LogInResult) => {
 
   const isUserAlreadyAuthenticted = (firebaseUser: Nullable<firebase.User>): boolean => {
     if (firebaseUser) {
-      for (const provider of firebaseUser?.providerData) {
+      for (const provider of firebaseUser.providerData) {
         if (provider && provider.uid === user.user.id) {
           return true;
         }

@@ -1,5 +1,5 @@
 import firebase from 'services/firebase';
-import { ActionWithPayload, EmptyAction } from 'store/types';
+import { ActionWithPayload, EmptyAction } from 'types/redux';
 
 export interface AuthState {
   isPending: boolean;
