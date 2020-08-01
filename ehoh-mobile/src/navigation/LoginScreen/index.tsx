@@ -1,6 +1,6 @@
 import GoogleLogo from 'assets/google.png';
 import House from 'assets/house.png';
-import { StatusBar } from 'expo-status-bar';
+import ButtonIcon from 'components/ButtonIcon';
 import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text, Image, Button } from 'react-native-elements';
@@ -27,12 +27,11 @@ const LoginScreen: React.FC = () => {
       <Button
         type="outline"
         title="Login with Google"
+        icon={<ButtonIcon source={GoogleLogo} />}
+        loading={isLoginPending}
         onPress={loginWithGoogle}
         style={{ width: 200 }}
-        icon={<Image source={GoogleLogo} style={{ width: 15, height: 15, marginRight: 15 }} />}
-        loading={isLoginPending}
       />
-      <StatusBar style="auto" />
     </View>
   );
 };

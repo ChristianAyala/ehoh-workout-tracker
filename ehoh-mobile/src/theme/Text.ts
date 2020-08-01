@@ -1,9 +1,10 @@
+import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 import { TextProps } from 'react-native-elements';
 
 const theme: TextProps = {
   h1Style: {
     fontSize: 45,
-    fontWeight: '600',
+    fontFamily: 'OpenSans_600SemiBold',
     textAlign: 'center',
     lineHeight: 50.0
   },
