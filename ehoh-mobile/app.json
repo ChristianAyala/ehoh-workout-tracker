@@ -4,9 +4,9 @@
     "slug": "ehoh",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@
       "googleServicesFile": "./src/config/google/GoogleService-Info.plist"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/favicon.png"
     },
     "packagerOpts": {
       "sourceExts": [ "js", "json", "ts", "tsx", "jsx"]

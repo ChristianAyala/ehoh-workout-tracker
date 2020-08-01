@@ -48,7 +48,7 @@ export const initialState: AuthState = {
 const handlers: Handlers<AuthState, AuthActionTypes> = {
   [actionTypes.LOGIN.PENDING]: (state, action) => ({
     ...state,
-    isLoading: (action as LoginPending).payload.isPending
+    isPending: (action as LoginPending).payload.isPending
   }),
   [actionTypes.LOGIN.SUCCESS]: (state, action) => ({
     ...state,
