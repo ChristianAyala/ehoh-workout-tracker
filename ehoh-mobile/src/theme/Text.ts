@@ -1,4 +1,3 @@
-import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 import { TextProps } from 'react-native-elements';
 
 const theme: TextProps = {
