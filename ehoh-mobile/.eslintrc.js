@@ -6,6 +6,9 @@ module.exports = {
       files: ['*.ts', '*.tsx', '*.d.ts'],
       parserOptions: {
         project: './tsconfig.json'
+      },
+      rules: {
+        '@typescript-eslint/prefer-nullish-coalescing': 0
       }
     }
   ]
