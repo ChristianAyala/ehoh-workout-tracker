@@ -17,7 +17,7 @@ const LoginScreen: React.FC = () => {
     <CenteredScreen>
       <Image source={House} style={{ width: 60, height: 60 }} resizeMode="center" />
       <Text h1>60/60{'\n'}Workouts</Text>
-      <Spacing height={50} />
+      <Spacing height={100} />
       <Button
         type="outline"
         title="Login with Google"
