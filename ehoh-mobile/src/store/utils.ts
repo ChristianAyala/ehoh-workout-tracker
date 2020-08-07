@@ -15,7 +15,7 @@ export type ASYNC_TYPES = typeof asyncRequestStates;
 export function createAsyncTypes(type: string): ASYNC_TYPES {
   return Object.keys(asyncRequestStates).reduce<ASYNC_TYPES>(
     (acc, curr) => Object.assign(acc, { [curr]: `${type}_${curr}` }),
-    asyncRequestStates
+    Object.assign({}, asyncRequestStates)
   );
 }
 

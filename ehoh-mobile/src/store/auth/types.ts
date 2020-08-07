@@ -1,10 +1,11 @@
 import firebase from 'services/firebase';
+import { Nullable } from 'types/global';
 import { ActionWithPayload, EmptyAction } from 'types/redux';
 
 export interface AuthState {
   isPending: boolean;
   error: string;
-  user: firebase.User | null;
+  user: Nullable<firebase.User>;
 }
 
 export type ExistingAuthRequest = EmptyAction;
