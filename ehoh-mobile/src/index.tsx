@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 import useResourceLoader from 'hooks/useResourceLoader';
 import RootNavigator from 'navigation';
 import React from 'react';
@@ -22,6 +23,7 @@ export default function App() {
           <RootNavigator />
         </NavigationContainer>
       </ThemeProvider>
+      <StatusBar style="light" />
     </Provider>
   );
 }

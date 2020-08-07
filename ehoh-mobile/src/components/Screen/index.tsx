@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
+import colors from 'theme/colors';
 
 export const FullScreen = styled.View`
   width: 100%;
   align-self: center;
-  background-color: #ffffff;
+  background-color: ${colors.screenBackground};
   flex: 1;
 `;
 

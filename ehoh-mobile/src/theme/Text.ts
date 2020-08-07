@@ -1,5 +1,7 @@
 import { TextProps } from 'react-native-elements';
 
+import colors from './colors';
+
 const theme: TextProps = {
   h1Style: {
     fontSize: 45,
@@ -8,7 +10,8 @@ const theme: TextProps = {
     lineHeight: 50.0
   },
   style: {
-    fontFamily: 'OpenSans_400Regular'
+    fontFamily: 'OpenSans_400Regular',
+    color: colors.white
   }
 };
 

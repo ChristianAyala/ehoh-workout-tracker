@@ -19,7 +19,6 @@ const LoginScreen: React.FC = () => {
       <Text h1>60/60{'\n'}Workouts</Text>
       <Spacing height={100} />
       <Button
-        type="outline"
         title="Login with Google"
         icon={<ButtonIcon source={GoogleLogo} />}
         loading={isLoginPending}
